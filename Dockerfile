@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 
 ENV REFRESHED_AT 2017-11-03
 
@@ -7,10 +7,10 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends apt-utils ca-certificates curl debconf-utils nano wget && \
     rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /opt/ubuntu
+RUN mkdir -p /opt/debian
 
-ENV HOME /opt/ubuntu
+ENV HOME /opt/debian
 
-WORKDIR /opt/ubuntu
+WORKDIR /opt/debian
 
 VOLUME ["/etc", "/var/log"]
