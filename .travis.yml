@@ -14,14 +14,10 @@ env:
   - secure: OlDrF0no+sx7sS/bi7hjQ70BbytzTWU7dIlTcpUCD7oF9eQX+IESRjv6CagNycwmD1bZAKdV+FzZ5QPR8cNYLERqbWR4FB294LmwYS4t8NjprxsRWuTijVO9UqKwjUslBmYmG1PmFYvQFktkJtdPpLs1z6N+iVwe4ao3aW85aSSTfh8ex4I7C7gLydMpfdutjlhg4NQnnslJdEVV7PyhUdZ7aUfhkhe1627x4qtJhXHbd/Tzxhy66E6t1qF53NHYX7cRcGpp2cobGzLGrYppoH00EXelR8kEXRZYlEp+XeweJEym59jcU73N4VfWf6kiN496zrvHS3PkdyrBQg8eme5MlI0d9LTlADbu4c1Yt1gnPWanRJkKCUU1qqw6SYKeOPG+6vS5eddBES252uE1HI4GXruLDhKJ+WXSpLW1YqUmjlwtWkyPrBmxbO/QwOVO+0G3Swbk32x9o8IteympoNY9KG/sfDlX8eIccfWtUJp29P7H6XYC5E13YieG4EA6NfOdcQndFwwipj2Ld8L1iEAZIJ0DxHBiVmIan7XUuEDzVSSweyD7xRvpPOcEqQuJ9sIR9ZVcxFjmyl/twt6fg+D3mmlcjp92zymzbH3GkMPSznlaScbU71o4bAq1AzcFyDtNrrGfUKgi3gqteQ0hSLjtiC4GkDp+S2zlwhbkSf4=
 
 script:
-- export TAG=`if [[ $TRAVIS_PULL_REQUEST == "false" ]] && [[ $TRAVIS_BRANCH == "master"
-  ]]; then echo "jessie"; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi`
+- export TAG=$TRAVIS_BRANCH
 - export REPO=dairyd/debian
 - docker build -t $REPO:$TAG -f Dockerfile .
 
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
-- if [[ $TRAVIS_PULL_REQUEST == "false" ]] && [[ $TRAVIS_BRANCH == "master" ]]; then
-  docker tag $REPO:$TAG $REPO:$TRAVIS_BUILD_NUMBER; docker push $REPO:$TRAVIS_BUILD_NUMBER;
-  fi
 - docker push $REPO:$TAG
