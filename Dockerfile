@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-ENV REFRESHED_AT 2018-05-01
+ENV REFRESHED_AT 2018-07-01
 
 RUN apt-get update && \
     apt-get upgrade -y && \
@@ -13,4 +13,4 @@ ENV HOME /opt/debian
 
 WORKDIR /opt/debian
 
-VOLUME ["/etc", "/var/log"]
+VOLUME ["/etc", "/var/log", "/home", "/root"]
