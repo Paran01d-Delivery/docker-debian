@@ -12,7 +12,7 @@ env:
 
 script:
 - export TAG=`if [[ $TRAVIS_PULL_REQUEST == "false" ]] && [[ $TRAVIS_BRANCH == "master"
-  ]]; then echo "stretch"; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi`
+  ]]; then echo "stretch"; else echo $TRAVIS_BRANCH; fi`
 - export REPO=dairyd/debian
 - docker build -t $REPO:$TAG -f Dockerfile .
 
