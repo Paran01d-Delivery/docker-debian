@@ -1,7 +1,6 @@
 FROM debian:stretch
-MAINTAINER Leo Luduena <lleo@linux.com>
 
-ENV REFRESHED_AT 2018-08-28
+ENV REFRESHED_AT 2018-10-15
 
 RUN apt-get update && \
     apt-get upgrade -y && \
