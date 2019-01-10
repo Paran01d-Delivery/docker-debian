@@ -2,7 +2,7 @@ FROM debian:stretch
 
 LABEL maintainer="devops@yungas.co"
 
-ENV REFRESHED_AT 2018-12-17
+ENV REFRESHED_AT 2019-01-01
 
 RUN apt-get update && \
     apt-get upgrade -y && \
