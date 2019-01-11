@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-LABEL maintainer="devops@yungas.co"
+LABEL maintainer="24.7@yungasdevops.com"
 
 ENV REFRESHED_AT 2019-01-01
 
