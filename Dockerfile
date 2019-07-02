@@ -1,7 +1,8 @@
 FROM debian:jessie
-MAINTAINER Leo Luduena<lleo@linux.com>
 
-ENV REFRESHED_AT 2018-08-28
+LABEL maintainer="24.7@yungasdevops.com"
+
+ENV REFRESHED_AT 2019-07-01
 
 RUN apt-get update && \
     apt-get upgrade -y && \
