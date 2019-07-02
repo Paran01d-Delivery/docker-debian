@@ -9,10 +9,10 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends apt-utils ca-certificates curl debconf-utils nano wget && \
     rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /opt/debian
+RUN mkdir -p /opt/server
 
-ENV HOME /opt/debian
+ENV HOME /opt/server
 
-WORKDIR /opt/debian
+WORKDIR /opt/server
 
 VOLUME ["/etc", "/var/log", "/home", "/root"]
