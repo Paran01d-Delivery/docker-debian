@@ -1,8 +1,8 @@
 FROM debian:stretch
 
-LABEL maintainer="24.7@yungasdevops.com"
+LABEL maintainer="7of9@yungasdevops.com"
 
-ENV REFRESHED_AT 2019-07-01
+ENV REFRESHED_AT 2019-08-01
 
 RUN apt-get update && \
     apt-get upgrade -y && \
