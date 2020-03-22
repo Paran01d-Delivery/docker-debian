@@ -10,7 +10,7 @@ env:
   - secure: pcjG8A58NMmTmyU2QieOb8+X4P0M6Fzj2mS6UJdlJWjZ69pFtVtQcozUbml87+QUiG3kDyaR67GhnIszA/3P+8z1DSfQdc3vUXnwd1F0jiKEyXg/RToTSQQ5lWanGc6wAYro+w2sY1ngt5rbEq1MUfySR2DAYoNvo+9eQ/BrG1BNQz1jlIQ3g97F2m2Nc0nnmqu4mKHYC3U6TBAbok8tl9XfdZ2Aem5NlbN97xEdi2IFRUO1Fn0U4A8N0yQXveYpAVyHYp2OS6pyy0jsBzpYPIUJhDaLJNGdtw9+fOvtAr2Hvjd20gey1M+PTr9RKEiCnbvAsPEhGQpE1n6eOOXh/FPm0R/00whdZx77IkERMZ3ONPIx8DGzkfaF6ULY2grKrPGW8aQwMox7hViVLLfQCZyxtvyCDypeI+J/ktQzbM+uQL+983RvuT/nfRNzLfoo1TgCIDYE7lZ6N5tDgefS6yCC0A9TmIz8Zv6xm/F+yL+857+EXP2zf+iQrOkcj1k2sOwzobmuPwJyXhGLoziZGOb/93/jrRRjGg3/n/qSjQ3KgEG0PUHCqoZQZadMP637vztFWewEzcOF5dvIEKyAShofm1FZP38mkwwCr8Bmc54rWKVIUZ/esLtROMcwc0PwKBbdqFt+rh9UHuxb+/qZwoX8Ip5GWB+TG8wGfHcBBlA=
 script:
 - export TAG=`if [[ $TRAVIS_PULL_REQUEST == "false" ]] && [[ $TRAVIS_BRANCH == "master"
-  ]]; then echo "buster"; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi`
+  ]]; then echo "stretch"; else echo $TRAVIS_BRANCH; fi`
 - export REPO=dairyd/debian
 - docker build -t $REPO:$TAG -f Dockerfile .
 after_success:
