@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:sid
 
 LABEL maintainer="7of9@ydevops.com"
 
