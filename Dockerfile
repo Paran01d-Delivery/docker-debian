@@ -1,8 +1,8 @@
 FROM debian:buster
 
-LABEL maintainer="7of9@ydevops.com"
+LABEL maintainer="docker@lleox.org"
 
-ENV REFRESHED_AT 2020-07-31
+ENV REFRESHED_AT 2021-07-21
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && \
